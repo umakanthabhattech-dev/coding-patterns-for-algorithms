@@ -1,0 +1,62 @@
+package Codepatterns.FastnSlow;
+import util.Node;
+
+/*
+Leetcode 19.
+Given a linked list and an integer N,
+the task is to delete the Nth node from the end of the linked list and print the updated linked list.
+ */
+public class RemoveNthNodeFromEnd {
+    // Function to print the linked list
+    public static void printLL(Node head) {
+        while (head != null) {
+            System.out.print(head.data + " ");
+            head = head.next;
+        }
+    }
+
+    // Function to delete the Nth node from the end of the linked list
+    public static Node DeleteNthNodefromEnd(Node head, int N) {
+        // Create two pointers, fastp and slowp
+        Node fastp = head;
+        Node slowp = head;
+
+        // Move the fastp pointer N nodes ahead
+        for (int i = 0; i < N; i++)
+            //0, 1, 2
+            fastp = fastp.next;
+
+        // If fastp becomes null, the Nth node from the end is the head
+        if (fastp == null)
+            return head.next;
+
+        // Move both pointers until fastp reaches the end
+        while (fastp.next != null) {
+            fastp = fastp.next;
+            slowp = slowp.next;
+        }
+
+        // Delete the Nth node from the end
+        Node delNode = slowp.next;
+        slowp.next = slowp.next.next;
+        delNode = null;
+        return head;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        int N = 3;
+        Node head = new Node(arr[0]);
+        head.next = new Node(arr[1]);
+        head.next.next = new Node(arr[2]);
+        head.next.next.next = new Node(arr[3]);
+        head.next.next.next.next = new Node(arr[4]);
+
+        // Delete the Nth node from the end and print the modified linked list
+        head = DeleteNthNodefromEnd(head, N);
+        printLL(head);
+    }
+}
+
+//time complexity: O(L) where L is the length of the linked list
+//space complexity: O(1)

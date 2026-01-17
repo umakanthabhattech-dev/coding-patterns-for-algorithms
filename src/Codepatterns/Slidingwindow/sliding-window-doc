@@ -1,0 +1,25 @@
+Main generic Logic of sliding window pattern:
+1. Initialize variables to keep track of the window's boundaries (e.g., start and end indices).
+2. Use a loop to expand the window by moving the end index forward.
+3. Inside the loop, update any necessary data structures or variables to reflect the current window's state.
+4. Check if the current window meets the desired condition (e.g., size, sum, unique elements).
+5. If the condition is met, perform any required operations (e.g., record the result, shrink the window by moving the start index forward).
+6. Repeat steps 2-5 until the end index reaches the end of the input data structure.
+7. Return or output the final result based on the operations performed during the window adjustments.
+
+sample problems that can be solved using the sliding window pattern:
+1. Maximum Sum Subarray of Size K
+2. Longest Substring Without Repeating Characters
+3. Minimum Size Subarray Sum
+4. Find All Anagrams in a String
+5. Longest Repeating Character Replacement
+6. Permutation in String
+7. Subarrays with K Different Integers
+8. Count Number of Nice Subarrays
+9. Longest Subarray with Ones after Replacement
+10. Sliding Window Maximum
+These problems typically involve finding a contiguous subarray or substring that meets certain criteria,
+making them well-suited for the sliding window technique.
+
+
+

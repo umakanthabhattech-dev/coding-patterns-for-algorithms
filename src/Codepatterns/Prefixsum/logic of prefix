@@ -1,0 +1,69 @@
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+
+  2
+  2 3
+  2 3 4
+  2 3 4 5
+
+    3
+    3 4
+    3 4 5
+
+
+      4
+      4 5
+
+
+        5
+
+Contiguos subarray sum
+sum(5) - sum(2) = 0,
+sum(5) = sum(2)
+where map is key as sum and value is index
+
+
+Subarray sum equals to k
+sum(5) - sum(2) = k,
+sum(5) - k = sum(2),
+So map contains key as sum and value frequency(count)
+
+
+divisible by k,
+(sum(5) - sum(2)) % k= 0
+(prefixSum[j] - prefixSum[i]) % k == 0
+So map contains key as remainder and value frequency(count)
+
+--------------------------------------------------------------------------
+
+
+✅ Use Prefix Sum when:
+
+You need:
+
+Range sum queries
+
+Count subarrays
+
+sum == k
+
+sum % k == 0
+
+Multiple queries involved
+
+
+✅ Use Kadane when:
+
+Problem explicitly says maximum subarray
+
+Only one answer needed
+
+No extra constraints
+Kadane is a specialized optimization for:
+max(prefix[j] - prefix[i])
+
+
+
